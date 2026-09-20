@@ -37,7 +37,6 @@
     .btn-primary{background:var(--green);color:#fff}.btn-primary:hover{background:var(--green-dark)}
     .btn-secondary{background:#fff;border-color:#ddd4c7}
     .hero-photo{position:relative}.hero-photo img{width:100%;display:block;aspect-ratio:4/5;object-fit:cover;border-radius:32px;box-shadow:var(--shadow)}
-    .badge{position:absolute;left:-18px;bottom:22px;background:#fff;padding:16px 18px;border-radius:18px;box-shadow:var(--shadow);font-weight:850}
     section{padding:82px 0}
     .section-head{text-align:center;max-width:760px;margin:0 auto 42px}
     .section-head h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;letter-spacing:-.04em;margin:0 0 12px}
@@ -57,39 +56,34 @@
     .profile img{width:150px;height:150px;object-fit:cover;border-radius:22px}
     .country{font-weight:800;color:var(--green)}.profile h3{font-size:1.65rem;margin:3px 0}.profile p{color:var(--muted);margin:8px 0}
     .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.tag{background:#eef4f1;color:var(--green-dark);padding:5px 9px;border-radius:999px;font-size:.8rem;font-weight:800}
-    .details{border-top:1px solid #eee;padding:18px 24px 24px;display:grid;gap:8px;font-size:.92rem}
-    .details strong{display:inline-block;width:85px}
+    .details{border-top:1px solid #eee;padding:18px 24px 24px;display:grid;gap:9px;font-size:.92rem}
+    .detail-row{display:grid;grid-template-columns:92px minmax(0,1fr);gap:10px;align-items:start}
+    .details strong{font-weight:800}
+    .detail-value{min-width:0;overflow-wrap:anywhere}
     .notice{margin-top:28px;padding:18px 20px;background:#fff3da;border:1px solid #f0d39a;border-radius:18px}
     .faq{display:grid;gap:12px;max-width:850px;margin:auto}.faq details{background:#fff;padding:18px 22px;border-radius:16px;box-shadow:0 6px 22px rgba(23,50,77,.06)}summary{font-weight:850;cursor:pointer}
     footer{background:#10283c;color:#d9e2ea;padding:40px 0}.footer-grid{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}.footer-brand{font-size:1.35rem;font-weight:900;color:#fff}.footer-small{font-size:.9rem;color:#aebdca}
-    .lang-sk,.lang-en{display:none}
-    body.show-sk .lang-sk{display:block}
-    body.show-en .lang-en{display:block}
-    span.lang-sk,span.lang-en,a.lang-sk,a.lang-en{display:none}
-    body.show-sk span.lang-sk,body.show-sk a.lang-sk{display:inline}
-    body.show-en span.lang-en,body.show-en a.lang-en{display:inline}
+    [data-lang]{display:none}
+    html[lang="sk"] [data-lang="sk"],html[lang="en"] [data-lang="en"]{display:revert}
     @media(max-width:850px){
-      nav a{display:none}.hero-grid,.story{grid-template-columns:1fr}.hero-photo{max-width:600px;margin:auto}.features,.profiles{grid-template-columns:1fr}.price{grid-template-columns:1fr}.profile-top{grid-template-columns:100px 1fr}.profile img{width:100px;height:100px}
+      nav a{display:none}.hero{padding-top:54px}.hero-grid,.story{grid-template-columns:1fr}.hero-photo{max-width:600px;margin:auto}.features,.profiles{grid-template-columns:1fr}.price{grid-template-columns:1fr}.profile-top{grid-template-columns:100px 1fr}.profile img{width:100px;height:100px}.badge{left:14px;bottom:14px}
     }
-  
-    .ornament{display:flex;align-items:center;justify-content:center;gap:14px;margin:8px auto 0;max-width:460px}
-    .ornament::before,.ornament::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#d8b05a,transparent)}
-    .ornament-mark{color:#d8b05a;font-family:Georgia,serif;font-size:22px;line-height:1;letter-spacing:5px}
-    .photo-caption{margin-top:10px;text-align:center;color:#d8b05a;font-family:Georgia,serif;font-size:18px;font-weight:600}
-    .photo-caption small{display:block;margin-top:3px;color:#7d8d97;font-family:Inter,Arial,sans-serif;font-size:10px;letter-spacing:.13em;text-transform:uppercase}
-</style>
+    @media(max-width:520px){
+      .container{width:min(100% - 32px,1120px)}.nav{gap:12px}.logo{font-size:1.35rem}.lang button{padding:6px 9px}section{padding:64px 0}.hero{padding:46px 0 54px}h1{font-size:clamp(2.5rem,14vw,3.6rem)}.story-card,.price{padding:26px}.profile-top{grid-template-columns:1fr}.profile img{width:100%;height:auto;aspect-ratio:4/3}.detail-row{grid-template-columns:1fr;gap:1px}.price-number{font-size:3.2rem}
+    }
+  </style>
 </head>
 <body>
 <header>
   <div class="container nav">
     <a class="logo" href="#">Afrika<span>Talk</span></a>
     <nav>
-      <a href="#about" class="lang-sk">O projekte</a><a href="#about" class="lang-en">About</a>
-      <a href="#profiles" class="lang-sk">Lektori</a><a href="#profiles" class="lang-en">Tutors</a>
-      <a href="#how" class="lang-sk">Ako to funguje</a><a href="#how" class="lang-en">How it works</a>
-      <a href="#contact" class="lang-sk">Kontakt</a><a href="#contact" class="lang-en">Contact</a>
+      <a href="#about" data-lang="sk">O projekte</a><a href="#about" data-lang="en">About</a>
+      <a href="#profiles" data-lang="sk">Lektori</a><a href="#profiles" data-lang="en">Tutors</a>
+      <a href="#how" data-lang="sk">Ako to funguje</a><a href="#how" data-lang="en">How it works</a>
+      <a href="#contact" data-lang="sk">Kontakt</a><a href="#contact" data-lang="en">Contact</a>
     </nav>
-    <div class="lang"><button id="sk" class="active">SK</button><button id="en">EN</button></div>
+    <div class="lang"><button id="sk" class="active" type="button" aria-label="Slovenčina" aria-pressed="true">SK</button><button id="en" type="button" aria-label="English" aria-pressed="false">EN</button></div>
   </div>
 </header>
 
@@ -97,22 +91,20 @@
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <div class="eyebrow">🌍 <span class="lang-sk">Jazyk • ľudia • kultúra</span><span class="lang-en">Language • people • culture</span></div>
-      <h1 class="lang-sk">Zlepšite si angličtinu.<br><span>Spoznajte Afriku.</span></h1>
-      <h1 class="lang-en">Improve your English.<br><span>Discover Africa.</span></h1>
-      <p class="lead lang-sk">Precvičte si svoju angličtinu s reálnymi ľuďmi z Afriky. Porozprávajte sa so skutočným človekom a objavte inú časť sveta.</p>
-      <p class="lead lang-en">Practice your English with real people from Africa. Talk to a real person and discover a different part of the world.</p>
+      <div class="eyebrow">🌍 <span data-lang="sk">Jazyk • ľudia • kultúra</span><span data-lang="en">Language • people • culture</span></div>
+      <h1 data-lang="sk">Zlepšite si angličtinu.<br><span>Spoznajte Afriku.</span></h1>
+      <h1 data-lang="en">Improve your English.<br><span>Discover Africa.</span></h1>
+      <p class="lead" data-lang="sk">Precvičte si svoju angličtinu s reálnymi ľuďmi z Afriky. Porozprávajte sa so skutočným človekom a objavte inú časť sveta.</p>
+      <p class="lead" data-lang="en">Practice your English through real conversations with people from Africa. Connect with someone new and discover a different part of the world.</p>
       <div class="actions">
-        <a class="btn btn-primary lang-sk" href="#profiles" >Vybrať si lektora</a>
-        <a class="btn btn-primary lang-en" href="#profiles" >Choose a tutor</a>
-        <a class="btn btn-secondary lang-sk" href="#how" >Ako to funguje?</a>
-        <a class="btn btn-secondary lang-en" href="#how" >How does it work?</a>
-      </div><div class="ornament"><span class="ornament-mark">✦</span></div>
+        <a class="btn btn-primary" href="#profiles" data-lang="sk">Vybrať si lektora</a>
+        <a class="btn btn-primary" href="#profiles" data-lang="en">Choose a tutor</a>
+        <a class="btn btn-secondary" href="#how" data-lang="sk">Ako to funguje?</a>
+        <a class="btn btn-secondary" href="#how" data-lang="en">How does it work?</a>
+      </div>
     </div>
     <div class="hero-photo">
-      <img src="assets/naomi.jpg" alt="AfrikaTalk – ilustračná fotografia"><div class="photo-caption"><span class="lang-sk">Východná Afrika</span><span class="lang-en">East Africa</span><small><span class="lang-sk">Ľudia · jazyk · kultúra</span><span class="lang-en">People · language · culture</span></small></div>
-      <div class="badge lang-sk">30 minút • 3 €</div>
-      <div class="badge lang-en">30 minutes • €3</div>
+      <img src="assets/naomi.jpg" alt="AfrikaTalk conversation tutor">
     </div>
   </div>
 </section>
@@ -120,18 +112,18 @@
 <section id="about">
   <div class="container story">
     <div class="story-card">
-      <div class="quote lang-sk">„Chcem prepájať ľudí, ktorí sa chcú zlepšiť v jazyku, s ľuďmi, ktorí dostanú možnosť pracovať na diaľku.“</div>
-      <div class="quote lang-en">“I want to connect people who want to improve their language skills with people who get an opportunity to work remotely.”</div>
-      <p class="lang-sk">Volám sa Marcel, veľmi rád cestujem a východná Afrika mi učarovala. Z tejto skúsenosti vznikol nápad sprostredkovať ľuďom z Afriky prácu, ktorá sa dá robiť na diaľku – konverzácie v cudzom jazyku.</p>
-      <p class="lang-en">My name is Marcel. I love traveling, and East Africa has captivated me. That is how the idea was born: to connect people in Africa with remote work – foreign language conversation practice.</p>
+      <div class="quote" data-lang="sk">„Chcem prepájať ľudí, ktorí sa chcú zlepšiť v jazyku, s ľuďmi, ktorí dostanú možnosť pracovať na diaľku.“</div>
+      <div class="quote" data-lang="en">“I want to connect people who want to improve their language skills with people who have the opportunity to work remotely.”</div>
+      <p data-lang="sk">Volám sa Marcel, veľmi rád cestujem a východná Afrika mi učarovala. Z tejto skúsenosti vznikol nápad sprostredkovať ľuďom z Afriky prácu, ktorá sa dá robiť na diaľku – konverzácie v cudzom jazyku.</p>
+      <p data-lang="en">My name is Marcel. I love travelling, and East Africa has captivated me. That experience inspired this idea: to create remote work opportunities for people in Africa through foreign-language conversation practice.</p>
     </div>
     <div>
       <div class="section-head" style="text-align:left;margin:0 0 20px">
-        <h2 class="lang-sk">Viac než jazyková lekcia</h2><div class="ornament"><span class="ornament-mark">✦</span></div>
-        <h2 class="lang-en">More than a language lesson</h2><div class="ornament"><span class="ornament-mark">✦</span></div>
+        <h2 data-lang="sk">Viac než jazyková lekcia</h2>
+        <h2 data-lang="en">More than a language lesson</h2>
       </div>
-      <p class="lang-sk">Cieľom stránky je kultúrne a sociálne spájanie, spoznávanie nového a búranie stereotypov. Konverzácie sú pre úplných začiatočníkov až pokročilých – aj pre každého, kto sa chce jednoducho porozprávať.</p>
-      <p class="lang-en">The goal is cultural and social connection, discovering new things and breaking down stereotypes. Conversations are suitable for absolute beginners through advanced speakers – and for anyone who simply wants to chat.</p>
+      <p data-lang="sk">Cieľom stránky je kultúrne a sociálne spájanie, spoznávanie nového a búranie stereotypov. Konverzácie sú pre úplných začiatočníkov až pokročilých – aj pre každého, kto sa chce jednoducho porozprávať.</p>
+      <p data-lang="en">The goal is to bring people and cultures together, discover something new and break down stereotypes. Conversations are suitable for everyone from complete beginners to advanced speakers – and for anyone who simply wants to chat.</p>
     </div>
   </div>
 </section>
@@ -139,18 +131,18 @@
 <section id="how" style="background:#f5eee4">
   <div class="container">
     <div class="section-head">
-      <h2 class="lang-sk">Ako to funguje?</h2><h2 class="lang-en">How it works</h2>
-      <p class="lang-sk">Jednoducho, online a v čase, ktorý vám vyhovuje.</p><p class="lang-en">Simple, online and at a time that suits you.</p>
+      <h2 data-lang="sk">Ako to funguje?</h2><h2 data-lang="en">How it works</h2>
+      <p data-lang="sk">Jednoducho, online a v čase, ktorý vám vyhovuje.</p><p data-lang="en">Simple, online, and at a time that suits you.</p>
     </div>
     <div class="features">
-      <div class="feature"><div class="icon">🗣️</div><h3 class="lang-sk">Vyberte si jazyk</h3><h3 class="lang-en">Choose a language</h3><p class="lang-sk">Angličtina, amharčina alebo svahilčina.</p><p class="lang-en">English, Amharic or Swahili.</p></div>
-      <div class="feature"><div class="icon">💻</div><h3 class="lang-sk">Stretnite sa online</h3><h3 class="lang-en">Meet online</h3><p class="lang-sk">30-minútová konverzácia v čase, ktorý vám vyhovuje.</p><p class="lang-en">A 30-minute conversation at a time that suits you.</p></div>
-      <div class="feature"><div class="icon">🤝</div><h3 class="lang-sk">Spoznajte človeka</h3><h3 class="lang-en">Meet a person</h3><p class="lang-sk">Rozprávajte sa o jazyku, kultúre, každodennom živote alebo o čomkoľvek, čo vás zaujíma.</p><p class="lang-en">Talk about language, culture, everyday life or anything that interests you.</p></div>
+      <div class="feature"><div class="icon">🗣️</div><h3 data-lang="sk">Vyberte si jazyk</h3><h3 data-lang="en">Choose a language</h3><p data-lang="sk">Angličtina, amharčina alebo svahilčina.</p><p data-lang="en">English, Amharic, or Swahili.</p></div>
+      <div class="feature"><div class="icon">💻</div><h3 data-lang="sk">Stretnite sa online</h3><h3 data-lang="en">Meet online</h3><p data-lang="sk">30-minútová konverzácia v čase, ktorý vám vyhovuje.</p><p data-lang="en">A 30-minute conversation at a time that suits you.</p></div>
+      <div class="feature"><div class="icon">🤝</div><h3 data-lang="sk">Spoznajte človeka</h3><h3 data-lang="en">Meet a person</h3><p data-lang="sk">Rozprávajte sa o jazyku, kultúre, každodennom živote alebo o čomkoľvek, čo vás zaujíma.</p><p data-lang="en">Talk about language, culture, everyday life, or anything else that interests you.</p></div>
     </div>
     <div class="price" style="margin-top:28px">
-      <div><h2 class="lang-sk">Jedna 30-minútová konverzácia</h2><h2 class="lang-en">One 30-minute conversation</h2>
-      <p class="lang-sk">Cena je 3 €. Dobrovoľne môžete poslať aj vyššiu sumu. Celú sumu dostane váš lektor.</p>
-      <p class="lang-en">The price is €3. You may voluntarily contribute more. Your instructor receives the full amount.</p></div>
+      <div><h2 data-lang="sk">Jedna 30-minútová konverzácia</h2><h2 data-lang="en">One 30-minute conversation</h2>
+      <p data-lang="sk">Cena je 3 €. Dobrovoľne môžete poslať aj vyššiu sumu. Celú sumu dostane váš lektor.</p>
+      <p data-lang="en">The price is €3. You can choose to contribute more if you wish. Your tutor receives the full amount.</p></div>
       <div class="price-number">€3<small> / 30 min</small></div>
     </div>
   </div>
@@ -159,44 +151,44 @@
 <section id="profiles">
   <div class="container">
     <div class="section-head">
-      <h2 class="lang-sk">Spoznajte svojho lektora</h2><h2 class="lang-en">Meet your tutor</h2>
-      <p class="lang-sk">Vyberte si človeka, s ktorým sa chcete rozprávať.</p><p class="lang-en">Choose the person you would like to talk with.</p>
+      <h2 data-lang="sk">Spoznajte svojho lektora</h2><h2 data-lang="en">Meet your tutor</h2>
+      <p data-lang="sk">Vyberte si človeka, s ktorým sa chcete rozprávať.</p><p data-lang="en">Choose the person you would like to talk to.</p>
     </div>
     <div class="profiles">
       <article class="profile">
         <div class="profile-top">
-          <img src="assets/jenny.jpg" alt="Jenifer z Etiópie"><div class="photo-caption">Jenifer<small><span class="lang-sk">Etiópia · Addis Abeba</span><span class="lang-en">Ethiopia · Addis Ababa</span></small></div>
-          <div><div class="country">🇪🇹 Ethiopia / Etiópia</div><h3>Jenifer</h3>
-          <p class="lang-sk">Študentka v Addis Abebe, miluje etiópsku gastronómiu a rada rozpráva o kultúre, histórii a živote bežných ľudí.</p>
-          <p class="lang-en">A student in Addis Ababa who loves Ethiopian cuisine and enjoys talking about culture, history and everyday life.</p>
+          <img src="assets/jenny.jpg" alt="Jenifer from Ethiopia">
+          <div><div class="country"><span data-lang="sk">🇪🇹 Etiópia</span><span data-lang="en">🇪🇹 Ethiopia</span></div><h3>Jenifer</h3>
+          <p data-lang="sk">Študentka v Addis Abebe, miluje etiópsku gastronómiu a rada rozpráva o kultúre, histórii a živote bežných ľudí.</p>
+          <p data-lang="en">A student in Addis Ababa who loves Ethiopian cuisine and enjoys talking about culture, history, and everyday life.</p>
           <div class="tags"><span class="tag">English</span><span class="tag">Amharic</span><span class="tag">Culture</span></div></div>
         </div>
         <div class="details">
-          <div><strong>WhatsApp</strong> +251 965 548 127</div>
-          <div><strong>Email</strong> jenny@africatalk.eu</div>
-          <div><strong>Platba / Payment</strong> SK0039... · <span class="lang-sk">správa „jenny“</span><span class="lang-en">reference “jenny”</span></div>
+          <div class="detail-row"><strong>WhatsApp</strong><span class="detail-value">+251 965 548 127</span></div>
+          <div class="detail-row"><strong>Email</strong><span class="detail-value">jenny@africatalk.eu</span></div>
+          <div class="detail-row"><strong><span data-lang="sk">Platba</span><span data-lang="en">Payment</span></strong><span class="detail-value">SK0039... · <span data-lang="sk">správa „jenny“</span><span data-lang="en">reference “jenny”</span></span></div>
         </div>
       </article>
 
       <article class="profile">
         <div class="profile-top">
-          <img src="assets/naomi.jpg" alt="Mercy z Kene"><div class="photo-caption">Mercy<small><span class="lang-sk">Keňa</span><span class="lang-en">Kenya</span></small></div>
-          <div><div class="country">🇰🇪 Kenya / Keňa</div><h3>Mercy</h3>
-          <p class="lang-sk">Pochádza z Kene, krajiny známej prírodou, safari, rozmanitou kultúrou a pobrežím Indického oceánu.</p>
-          <p class="lang-en">She is from Kenya, known for its stunning nature, safaris, diverse culture and Indian Ocean coastline.</p>
+          <img src="assets/naomi.jpg" alt="Mercy from Kenya">
+          <div><div class="country"><span data-lang="sk">🇰🇪 Keňa</span><span data-lang="en">🇰🇪 Kenya</span></div><h3>Mercy</h3>
+          <p data-lang="sk">Pochádza z Kene, krajiny známej prírodou, safari, rozmanitou kultúrou a pobrežím Indického oceánu.</p>
+          <p data-lang="en">She is from Kenya, a country known for its stunning landscapes, safaris, diverse culture, and Indian Ocean coastline.</p>
           <div class="tags"><span class="tag">English</span><span class="tag">Swahili</span><span class="tag">Kenya</span></div></div>
         </div>
         <div class="details">
-          <div><strong>WhatsApp</strong> +254 799 039 358</div>
-          <div><strong>Email</strong> mercy@africatalk.eu</div>
-          <div><strong>Platba / Payment</strong> SK0039... · <span class="lang-sk">správa „mercy“</span><span class="lang-en">reference “mercy”</span></div>
+          <div class="detail-row"><strong>WhatsApp</strong><span class="detail-value">+254 799 039 358</span></div>
+          <div class="detail-row"><strong>Email</strong><span class="detail-value">mercy@africatalk.eu</span></div>
+          <div class="detail-row"><strong><span data-lang="sk">Platba</span><span data-lang="en">Payment</span></strong><span class="detail-value">SK0039... · <span data-lang="sk">správa „mercy“</span><span data-lang="en">reference “mercy”</span></span></div>
         </div>
       </article>
     </div>
     <div class="notice">
-      <strong class="lang-sk">Dôležité:</strong><strong class="lang-en">Important:</strong>
-      <span class="lang-sk"> AfrikaTalk je platforma na precvičovanie jazyka a kultúrnu výmenu – neslúži na randenie ani na žiadanie o finančné príspevky.</span>
-      <span class="lang-en"> AfrikaTalk is a platform for language practice and cultural exchange – it is not intended for dating or soliciting financial contributions.</span>
+      <strong data-lang="sk">Dôležité:</strong><strong data-lang="en">Important:</strong>
+      <span data-lang="sk"> AfrikaTalk je platforma na precvičovanie jazyka a kultúrnu výmenu – neslúži na randenie ani na žiadanie o finančné príspevky.</span>
+      <span data-lang="en"> AfrikaTalk is a platform for language practice and cultural exchange. It is not intended for dating or for requesting financial contributions.</span>
     </div>
   </div>
 </section>
@@ -204,14 +196,14 @@
 <section id="contact" style="background:#f5eee4">
   <div class="container">
     <div class="section-head">
-      <h2 class="lang-sk">Pripravení porozprávať sa?</h2><h2 class="lang-en">Ready to have a conversation?</h2>
-      <p class="lang-sk">Kontaktujte vybraného lektora cez WhatsApp alebo email a dohodnite si termín.</p>
-      <p class="lang-en">Contact your chosen tutor via WhatsApp or email and arrange a time.</p>
+      <h2 data-lang="sk">Pripravení porozprávať sa?</h2><h2 data-lang="en">Ready to start a conversation?</h2>
+      <p data-lang="sk">Kontaktujte vybraného lektora cez WhatsApp alebo email a dohodnite si termín.</p>
+      <p data-lang="en">Contact your chosen tutor via WhatsApp or email to arrange a time.</p>
     </div>
     <div class="faq">
-      <details><summary class="lang-sk">Pre koho sú konverzácie určené?</summary><summary class="lang-en">Who are the conversations for?</summary><p class="lang-sk">Od úplných začiatočníkov až po pokročilých a pre každého, kto sa chce porozprávať v cudzom jazyku.</p><p class="lang-en">From absolute beginners to advanced speakers, and anyone who wants to chat in a foreign language.</p></details>
-      <details><summary class="lang-sk">Aké jazyky si môžem vybrať?</summary><summary class="lang-en">Which languages can I choose?</summary><p class="lang-sk">Angličtinu, amharčinu alebo svahilčinu.</p><p class="lang-en">English, Amharic or Swahili.</p></details>
-      <details><summary class="lang-sk">Ako prebieha platba?</summary><summary class="lang-en">How do I pay?</summary><p class="lang-sk">Podľa dodaných údajov bankovým prevodom na slovenský účet; celú sumu dostane lektor.</p><p class="lang-en">According to the supplied details, payment is made by bank transfer to a Slovak account; the instructor receives the full amount.</p></details>
+      <details><summary data-lang="sk">Pre koho sú konverzácie určené?</summary><summary data-lang="en">Who are the conversations for?</summary><p data-lang="sk">Od úplných začiatočníkov až po pokročilých a pre každého, kto sa chce porozprávať v cudzom jazyku.</p><p data-lang="en">From complete beginners to advanced speakers – and anyone who wants to chat in a foreign language.</p></details>
+      <details><summary data-lang="sk">Aké jazyky si môžem vybrať?</summary><summary data-lang="en">Which languages can I choose?</summary><p data-lang="sk">Angličtinu, amharčinu alebo svahilčinu.</p><p data-lang="en">English, Amharic, or Swahili.</p></details>
+      <details><summary data-lang="sk">Ako prebieha platba?</summary><summary data-lang="en">How do I pay?</summary><p data-lang="sk">Podľa dodaných údajov bankovým prevodom na slovenský účet; celú sumu dostane lektor.</p><p data-lang="en">Pay by bank transfer to the Slovak account provided. Your tutor receives the full amount.</p></details>
     </div>
   </div>
 </section>
@@ -225,23 +217,18 @@
 </footer>
 
 <script>
-  const buttons = {
-    sk: document.getElementById('sk'),
-    en: document.getElementById('en')
-  };
+  const buttons = {sk: document.getElementById('sk'), en: document.getElementById('en')};
   function setLang(lang){
-    document.body.classList.remove('show-sk','show-en');
-    document.body.classList.add('show-' + lang);
     document.documentElement.lang = lang;
-    buttons.sk.classList.toggle('active', lang === 'sk');
-    buttons.en.classList.toggle('active', lang === 'en');
-    try { localStorage.setItem('afrikatalk-language', lang); } catch(e) {}
+    Object.entries(buttons).forEach(([key,btn]) => {
+      const active = key === lang;
+      btn.classList.toggle('active', active);
+      btn.setAttribute('aria-pressed', active);
+    });
+    localStorage.setItem('afrikatalk-language', lang);
   }
-  buttons.sk.addEventListener('click', () => setLang('sk'));
-  buttons.en.addEventListener('click', () => setLang('en'));
-  let saved = 'sk';
-  try { saved = localStorage.getItem('afrikatalk-language') || 'sk'; } catch(e) {}
-  setLang(saved);
+  buttons.sk.onclick=()=>setLang('sk'); buttons.en.onclick=()=>setLang('en');
+  setLang(localStorage.getItem('afrikatalk-language') || 'sk');
 </script>
 </body>
 </html>
