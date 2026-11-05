@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sk">
+<html>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
     :root { --ink: #17324d; --muted: #607285; --cream: #fffaf2; --sand: #f2e4cf; --green: #2f725b; --green-dark: #225540; --gold: #e7a93b; --white: #fff; --shadow: 0 18px 50px rgba(23,50,77,.12); --radius: 24px; }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0px; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); background: var(--cream); line-height: 1.6; overflow-x: hidden; }
+body { margin: 0px; font-size: 16px; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; color: var(--ink); background: var(--cream); line-height: 1.6; overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; }
 .container { width: min(1120px, 92%); margin: auto; }
@@ -27,7 +27,7 @@ nav a:hover { color: var(--green); }
 .eyebrow { display: inline-flex; gap: 8px; align-items: center; background: rgb(231, 240, 235); color: var(--green-dark); padding: 7px 12px; border-radius: 999px; font-weight: 800; font-size: 0.84rem; }
 h1 { font-size: clamp(2.8rem, 6vw, 5.2rem); line-height: 0.98; letter-spacing: -0.055em; margin: 18px 0px; }
 h1 span { color: var(--green); }
-.lead { font-size: 1.22rem; color: var(--muted); max-width: 650px; }
+.lead { font-size: 1.1rem; color: var(--muted); max-width: 650px; }
 .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
 .btn { display: inline-flex; align-items: center; justify-content: center; padding: 13px 19px; border-radius: 999px; font-weight: 850; border: 1px solid transparent; cursor: pointer; }
 .btn-primary { background: var(--green); color: rgb(255, 255, 255); }
@@ -37,7 +37,7 @@ h1 span { color: var(--green); }
 .hero-photo img { width: 100%; display: block; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 32px; box-shadow: var(--shadow); }
 section { padding: 82px 0px; }
 .section-head { text-align: center; max-width: 760px; margin: 0px auto 42px; }
-.section-head h2 { font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.05; letter-spacing: -0.04em; margin: 0px 0px 12px; }
+.section-head h2 { font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1.05; letter-spacing: -0.04em; margin: 0px 0px 12px; }
 .section-head p { color: var(--muted); font-size: 1.08rem; }
 .story { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 45px; align-items: center; }
 .story-card { background: rgb(255, 255, 255); border-radius: var(--radius); padding: 34px; box-shadow: var(--shadow); }
@@ -128,293 +128,227 @@ html[lang="sk"] [data-lang="sk"], html[lang="en"] [data-lang="en"] { display: re
 </head>
 <body>
 <header>
-  <div class="container nav">
-    <a class="logo" href="#">Afrika<span>Talk</span></a>
-    <nav>
-      <a href="#about" data-lang="sk">O projekte</a><a href="#about" data-lang="en">About</a>
-      <a href="#profiles" data-lang="sk">Lektori</a><a href="#profiles" data-lang="en">Tutors</a>
-      <a href="#how" data-lang="sk">Ako to funguje</a><a href="#how" data-lang="en">How it works</a>
-      <a href="#contact" data-lang="sk">Kontakt</a><a href="#contact" data-lang="en">Contact</a>
-    </nav>
-    <div class="lang"><button id="sk" class="active" type="button" aria-label="Slovenčina" aria-pressed="true">SK</button><button id="en" type="button" aria-label="English" aria-pressed="false">EN</button></div>
-  </div>
-</header>
-
-<main>
+<div class="container nav"><a class="logo" href="#">Afrika<span>Talk</span></a><nav><a href="#about" data-lang="sk">O projekte</a><a href="#about" data-lang="en">About</a> <a href="#profiles" data-lang="sk">Lektori</a><a href="#profiles" data-lang="en">Tutors</a> <a href="#how" data-lang="sk">Ako to funguje</a><a href="#how" data-lang="en">How it works</a> <a href="#contact" data-lang="sk">Kontakt</a><a href="#contact" data-lang="en">Contact</a></nav>
+<div class="lang"><button id="sk" class="active" type="button" aria-label="Slovenčina" aria-pressed="true">SK</button><button id="en" type="button" aria-label="English" aria-pressed="false">EN</button></div>
+</div>
+</header><main>
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">🌍 <span data-lang="sk">Jazyk • Ľudia • Kultúra</span><span data-lang="en">Language • People • Culture</span></div>
-      <h1 data-lang="sk">Zlepšite si angličtinu.<br><span>Spoznajte Afriku.</span></h1>
-      <h1 data-lang="en">Improve your English.<br><span>Discover Africa.</span></h1>
-      <p class="lead" data-lang="sk">Precvičte si svoju angličtinu s reálnymi ľuďmi z Afriky. Porozprávajte sa so skutočným človekom a objavte inú časť sveta.</p>
-      <p class="lead" data-lang="en">Practice your English through real conversations with people from Africa. Connect with someone new and discover a different part of the world.</p>
-      <div class="actions">
-        <a class="btn btn-primary" href="#profiles" data-lang="sk">Vybrať si lektora</a>
-        <a class="btn btn-primary" href="#profiles" data-lang="en">Choose a tutor</a>
-        <a class="btn btn-secondary" href="#how" data-lang="sk">Ako to funguje?</a>
-        <a class="btn btn-secondary" href="#how" data-lang="en">How does it work?</a>
-      </div>
-    </div>
-    <div class="hero-photo">
-      <img src="assets/naomi.jpg" alt="AfrikaTalk conversation tutor">
-      <p class="gl-1" data-lang="sk">Naomi z mesta Morogoro v Tanzanii</p>
-      <p class="gl-1" data-lang="en">Naomi from Morogoro, Tanzania</p></div>
-  </div>
+<div class="container hero-grid">
+<div>
+<div class="eyebrow">🌍 <span data-lang="sk">Jazyk &bull; Ľudia &bull; Kult&uacute;ra</span><span data-lang="en">Language &bull; People &bull; Culture</span></div>
+<h1 data-lang="sk">Zlep&scaron;ite si angličtinu.<br><span>Spoznajte Afriku.</span></h1>
+<h1 data-lang="en">Improve your English.<br><span>Discover Africa.</span></h1>
+<p class="lead" data-lang="sk">Precvičte si svoju angličtinu s re&aacute;lnymi ľuďmi z Afriky. Porozpr&aacute;vajte sa so skutočn&yacute;m človekom a objavte in&uacute; časť sveta.</p>
+<p class="lead" data-lang="en">Practice your English through real conversations with people from Africa. Connect with someone new and discover a different part of the world.</p>
+<div class="actions"><a class="btn btn-primary" href="#profiles" data-lang="sk">Vybrať si lektora</a> <a class="btn btn-primary" href="#profiles" data-lang="en">Choose a tutor</a> <a class="btn btn-secondary" href="#how" data-lang="sk">Ako to funguje?</a> <a class="btn btn-secondary" href="#how" data-lang="en">How does it work?</a></div>
+</div>
+<div class="hero-photo"><img src="assets/naomi.jpg" alt="AfrikaTalk conversation tutor">
+<p class="lead" data-lang="sk">Naomi z mesta Morogoro v Tanzanii</p>
+<p class="lead" data-lang="en">Naomi from Morogoro, Tanzania</p>
+</div>
+</div>
 </section>
-
 <section id="about">
-  <div class="container story">
-    <div class="story-card">
-      <div class="quote" data-lang="sk">„Chcem prepájať ľudí, ktorí sa chcú zlepšiť v jazyku, s ľuďmi, ktorí dostanú možnosť pracovať na diaľku.“</div>
-      <div class="quote" data-lang="en">“I want to connect people who want to improve their language skills with people who have the opportunity to work remotely.”</div>
-      <p data-lang="sk" class="gl-2"><span lang="SK" style="font-size:12.0pt;font-family:
-&quot;Calibri&quot;,sans-serif;mso-fareast-font-family:&quot;Malgun Gothic&quot;;mso-fareast-theme-font:
-minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi;
-mso-ansi-language:SK;mso-fareast-language:KO;mso-bidi-language:AR-SA">Volám sa
-Marcel, rád cestujem a východná Afrika mi učarovala. Život miestnych ľudí je
-veľmi ťažký. Častokrát nemajú možnosť pracovať a uživiť vlastné rodiny.
-Rád by som, aspoň niektorým z nich, spolu s vami pomohol a tak
-sa zrodil nápad sprostredkovať im prácu, ktorá sa dá robiť aj na diaľku, a to konverzácie
-v cudzom jazyku.</span></p>
-      <p data-lang="en">My name is Marcel. I love to travel, and East Africa has captivated me. Life for the 
-        local people is very difficult; often, they lack the opportunity to work and support their families. 
-        I would like to help at least some of them—with your assistance—and that is how the idea was born
-         to connect them with remote work: specifically, foreign language conversation practice.</p>
-    </div>
-    <div>
-      <div class="section-head" style="text-align:left;margin:0 0 20px">
-        <h2 data-lang="sk">Viac než jazyková lekcia</h2>
-        <h2 data-lang="en">More than a language lesson</h2>
-        <p data-lang="sk" class="gl-2"><span lang="SK" style="font-size:12.0pt;font-family:
-&quot;Calibri&quot;,sans-serif;mso-fareast-font-family:&quot;Malgun Gothic&quot;;mso-fareast-theme-font:
-minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi;
-mso-ansi-language:SK;mso-fareast-language:KO;mso-bidi-language:AR-SA">Cieľom tejto stránky je spájať dobrých ľudí, ktorí si chcú zlepšiť svoj verbálny prejav nielen v angličtine, chcú pomôcť alebo sa chcú dozvedieť viac o živote ľudí v Afrike. Stránka nemá byť len o učení sa cudzieho jazyka, ale aj o kultúrnom a sociálnom spájaní sa, spoznávaní nového a o búraní stereotypov.</span></p>
-      </div>
-      
-      <p data-lang="en">The goal of this site is to connect good people who want to improve their verbal communication skills—not just in English—as well as those who wish to help or learn more about life in Africa. The site is not intended solely for foreign language learning; it is also about cultural and social connection, discovering new things, and breaking down stereotypes.</p>
-    </div>
-  </div>
+<div class="container story">
+<div class="story-card">
+<div class="quote" data-lang="sk">&bdquo;Chcem prep&aacute;jať ľud&iacute;, ktor&iacute; sa chc&uacute; zlep&scaron;iť v jazyku, s ľuďmi, ktor&iacute; dostan&uacute; možnosť pracovať na diaľku.&ldquo;</div>
+<div class="quote" data-lang="en">&ldquo;I want to connect people who want to improve their language skills with people who have the opportunity to work remotely.&rdquo;</div>
+<p data-lang="sk" class="gl-2"><span lang="SK" style="font-size: 12.0pt; font-family: 'Calibri',sans-serif; mso-fareast-font-family: 'Malgun Gothic'; mso-fareast-theme-font: minor-fareast; mso-bidi-font-family: 'Times New Roman'; mso-bidi-theme-font: minor-bidi; mso-ansi-language: SK; mso-fareast-language: KO; mso-bidi-language: AR-SA;">Vol&aacute;m sa Marcel, r&aacute;d cestujem a v&yacute;chodn&aacute; Afrika mi učarovala. Život miestnych ľud&iacute; je veľmi ťažk&yacute;. Častokr&aacute;t nemaj&uacute; možnosť pracovať a uživiť vlastn&eacute; rodiny. R&aacute;d by som, aspoň niektor&yacute;m z nich, spolu s vami pomohol a tak sa zrodil n&aacute;pad sprostredkovať im pr&aacute;cu, ktor&aacute; sa d&aacute; robiť aj na diaľku, a to konverz&aacute;cie v cudzom jazyku.</span></p>
+<p data-lang="en">My name is Marcel. I love to travel, and East Africa has captivated me. Life for the local people is very difficult; often, they lack the opportunity to work and support their families. I would like to help at least some of them&mdash;with your assistance&mdash;and that is how the idea was born to connect them with remote work: specifically, foreign language conversation practice.</p>
+</div>
+<div>
+<div class="section-head" style="text-align: left; margin: 0 0 20px;">
+<h2 data-lang="sk">Viac než jazykov&aacute; lekcia</h2>
+<h2 data-lang="en">More than a language lesson</h2>
+<p data-lang="sk" class="gl-2"><span lang="SK" style="font-size: 12.0pt; font-family: 'Calibri',sans-serif; mso-fareast-font-family: 'Malgun Gothic'; mso-fareast-theme-font: minor-fareast; mso-bidi-font-family: 'Times New Roman'; mso-bidi-theme-font: minor-bidi; mso-ansi-language: SK; mso-fareast-language: KO; mso-bidi-language: AR-SA;">Cieľom tejto str&aacute;nky je sp&aacute;jať dobr&yacute;ch ľud&iacute;, ktor&iacute; si chc&uacute; zlep&scaron;iť svoj verb&aacute;lny prejav nielen v angličtine, chc&uacute; pom&ocirc;cť alebo sa chc&uacute; dozvedieť viac o živote ľud&iacute; v Afrike. Str&aacute;nka nem&aacute; byť len o učen&iacute; sa cudzieho jazyka, ale aj o kult&uacute;rnom a soci&aacute;lnom sp&aacute;jan&iacute; sa, spozn&aacute;van&iacute; nov&eacute;ho a o b&uacute;ran&iacute; stereotypov.</span></p>
+</div>
+<p data-lang="en">The goal of this site is to connect good people who want to improve their verbal communication skills&mdash;not just in English&mdash;as well as those who wish to help or learn more about life in Africa. The site is not intended solely for foreign language learning; it is also about cultural and social connection, discovering new things, and breaking down stereotypes.</p>
+</div>
+</div>
 </section>
-
-<section id="how" style="background:#f5eee4">
-  <div class="container">
-    <div class="section-head">
-      <h2 data-lang="sk">Ako to funguje?</h2><h2 data-lang="en">How it works</h2>
-      <p data-lang="sk">Jednoducho, online a v čase, ktorý vám vyhovuje.</p><p data-lang="en">Simple, online, and at a time that suits you.</p>
-    </div>
-    <div class="features">
-      <div class="feature"><div class="icon">🗣️</div><h3 data-lang="sk">Vyberte si jazyk</h3><h3 data-lang="en">Choose a language</h3><p data-lang="sk">Angličtina, amharčina, lugandčina alebo svahilčina.</p><p data-lang="en">English, Amharic, Luganda or Swahili.</p></div>
-      <div class="feature"><div class="icon">💻</div><h3 data-lang="sk">Stretnite sa online</h3><h3 data-lang="en">Meet online</h3><p data-lang="sk">30-minútová konverzácia v čase, ktorý vám vyhovuje.</p><p data-lang="en">A 30-minute conversation at a time that suits you.</p></div>
-      <div class="feature"><div class="icon">🤝</div><h3 data-lang="sk">Spoznajte človeka</h3><h3 data-lang="en">Meet a person</h3><p data-lang="sk">Rozprávajte sa o jazyku, kultúre, každodennom živote alebo o čomkoľvek, čo vás zaujíma.</p><p data-lang="en">Talk about language, culture, everyday life, or anything else that interests you.</p></div>
-    </div>
-    <div class="price" style="margin-top:28px">
-      <div><h2 data-lang="sk">Jedna 30-minútová konverzácia</h2><h2 data-lang="en">One 30-minute conversation</h2>
-      <p data-lang="sk">Cena je 3 €. Dobrovoľne môžete poslať aj vyššiu sumu. Celú sumu dostane váš lektor.</p>
-      <p data-lang="en">The price is €3. You can choose to contribute more if you wish. Your tutor receives the full amount.</p></div>
-      <div class="price-number">€3<small> / 30 min</small></div>
-    </div>
-  </div>
-</section>
-
-<section id="profiles">
-  <div class="container">
-    <div class="section-head">
-      <h2 data-lang="sk">Spoznajte svojho lektora</h2><h2 data-lang="en">Meet your tutor</h2>
-      <p data-lang="sk">Vyberte si človeka, s ktorým sa chcete rozprávať.</p><p data-lang="en">Choose the person you would like to talk to.</p>
-    </div>
-    <div class="profiles">
-      <article class="profile">
-        <div class="profile-top">
-          <img src="assets/jenny.jpg" alt="Jenifer from Ethiopia">
-          <div><div class="country"><span data-lang="sk">🇪🇹 Etiópia</span><span data-lang="en">🇪🇹 Ethiopia</span></div><h3>Jenifer</h3>
-          <p data-lang="sk"><span lang="SK" style="font-size:11.0pt;font-family:
-&quot;Calibri&quot;,sans-serif;mso-fareast-font-family:&quot;Malgun Gothic&quot;;mso-fareast-theme-font:
-minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi;
-mso-ansi-language:SK;mso-fareast-language:KO;mso-bidi-language:AR-SA">Jenifer
-z Etiópie - krajiny vo východnej Afrike, ktorá je známa bohatou históriou,
-rozmanitou kultúrou, hornatou krajinou a tým, že patrí medzi kolísky ľudskej
-civilizácie. Jenifer študuje na Damat college v Addis Abebe. Jej
-materinský jazyk je amharčina a okrem angličtiny študuje francúžštinu a čínštinu.
-Jej koníčkom je etiópska gastronómia. Je mamou štvorročnej dcéry Michaely.
-Môžete sa s ňou rozprávať o etiópskej kultúre, histórii, gastronómii, živote
-bežných ľudí a o všetkom, čo vás zaujíma.
-</span></p>
-          <p data-lang="en">Jenifer
-comes from Ethiopia - a country in East Africa known for its rich history,
-diverse culture, and mountainous landscape, and recognized as one of the
-cradles of human civilization. Jenifer is a student at Damat College in Addis Ababa.
-Her native language is Amharic, and in addition to English, she is studying
-French and Chinese. She has a keen interest in Ethiopian cuisine. She is also
-the mother of a four-year-old daughter named Michaela.
-You can talk to her about Ethiopian culture, history, and cuisine, the lives
-of ordinary people, or anything else that interests you.</p>
-          <div class="tags"><span class="tag">English</span><span class="tag">Amharic / አማርኛ</span><span class="tag">Culture</span></div></div>
-        </div>
-        <div class="details">
-          <div class="detail-row"><strong>WhatsApp</strong><span class="detail-value">+251 965 548 127</span></div>
-          <div class="detail-row"><strong>Email</strong><span class="detail-value">jenny.afrikatalk@gmail.com</span></div>
-          <div class="detail-row"><strong><span data-lang="sk">Platba</span><span data-lang="en">Payment</span></strong><span class="detail-value">SK03 8330 0000 0023 0360 3860   /  <span data-lang="sk">správa „Jenny“</span><span data-lang="en">reference “Jenny”</span></span></div>
-        </div>
-      </article>
-
-<article class="profile">
-        <div class="profile-top">
-          <img src="assets/Gloria.png" alt="Gloria from Uganda">
-          <div><div class="country"><span data-lang="sk">🇺🇬 Uganda</span><span data-lang="en">🇺🇬 Uganda</span></div><h3>Gloria</h3>
-          <p data-lang="sk"><span lang="SK" style="font-size:11.0pt;font-family:
-&quot;Calibri&quot;,sans-serif;mso-fareast-font-family:&quot;Malgun Gothic&quot;;mso-fareast-theme-font:
-minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi;
-mso-ansi-language:SK;mso-fareast-language:KO;mso-bidi-language:AR-SA">Gloria pochádza z Ugandy – krajiny
- vo východnej Afrike, ktorá je známa ako „perla Afriky“. Uganda má jedny z najpriaznivejších klimatických
-  podmienok na celom africkom kontinente. Krajina sa vyznačuje bohatou históriou. Je tiež významným 
-  turistickým cieľom, ktorý ponúka množstvo krásnych prírodných scenérií. Gloria je učiteľkou, 
-  vyučuje angličtinu, dejepis a  geografiu. Jej materinským jazykom je lugandčina a okrem nej plynule
-   ovláda aj angličtinu. Rada sa vzdeláva a má veľmi rada deti. Je matkou trojročnej dcéry Shalluwy. 
-   Môžete sa s ňou porozprávať o histórii Ugandy, živote bežných ľudí alebo o čomkoľvek inom,
-    čo vás zaujíma.</span></p>
-          <p data-lang="en">She is from Uganda, a country known as the "Pearl of Africa."
-             Uganda boasts some of the most favorable climatic conditions on the entire African continent. 
-             The country is characterized by a rich history and is also a significant tourist destination,
-              offering a wealth of beautiful natural scenery. Gloria is a teacher; she teaches English, history,
-               and geography. Her native language is Luganda, and she is also fluent in English. She enjoys
-                learning and is very fond of children. She is the mother of a three-year-old daughter named
-                 Shalluwa. You can talk to her about the history of Uganda, the lives of ordinary 
-                 people, or anything else that interests you.</p>
-          <div class="tags"><span class="tag">English</span><span class="tag">Luganda</span><span class="tag">History</span></div></div>
-        </div>
-        <div class="details">
-          <div class="detail-row"><strong>WhatsApp</strong><span class="detail-value">+256 772 310 682</span></div>
-          <div class="detail-row"><strong>Email</strong><span class="detail-value">gloria.afrikatalk@gmail.com</span></div>
-          <div class="detail-row"><strong><span data-lang="sk">Platba</span><span data-lang="en">Payment</span></strong><span class="detail-value">SK03 8330 0000 0023 0360 3860   /  <span data-lang="sk">správa „Gloria“</span><span data-lang="en">reference “Gloria”</span></span></div>
-        </div>
-      </article>
-
-<article class="profile">
-        <div class="profile-top">
-          <img src="assets/Neema.jpg" alt="Neema from Tanzania">
-          <div><div class="country"><span data-lang="sk">🇹🇿 Tanzania</span><span data-lang="en">🇹🇿 Tanzania</span></div><h3>Neema</h3>
-          <p data-lang="sk"><span lang="SK" style="font-size:11.0pt;font-family:
-&quot;Calibri&quot;,sans-serif;mso-fareast-font-family:&quot;Malgun Gothic&quot;;mso-fareast-theme-font:
-minor-fareast;mso-bidi-font-family:&quot;Times New Roman&quot;;mso-bidi-theme-font:minor-bidi;
-mso-ansi-language:SK;mso-fareast-language:KO;mso-bidi-language:AR-SA">Neema pochádza z Tanzánie - krajiny známej svojou divokou 
-prírodou, safari, rozmanitými kultúrami a pobrežím. Je matkou jedného dieťaťa.</span></p>
-          <p data-lang="en">Neema is from Tanzania - a country known for its wildlife, safaris, diverse cultures, and coastline. She is a mother of one child.</p>
-          <div class="tags"><span class="tag">English</span><span class="tag">Swahili</span><span class="tag">Tanzania</span></div></div>
-        </div>
-        <div class="details">
-          <div class="detail-row"><strong>WhatsApp</strong><span class="detail-value">+255 758 666 531</span></div>
-          <div class="detail-row"><strong>Email</strong><span class="detail-value">neema.afrikatalk@gmail.com</span></div>
-          <div class="detail-row"><strong><span data-lang="sk">Platba</span><span data-lang="en">Payment</span></strong><span class="detail-value">SK03 8330 0000 0023 0360 3860   /  <span data-lang="sk">správa „Neema“</span><span data-lang="en">reference “Neema”</span></span></div>
-        </div>
-      </article>
-
-
-
-      <article class="profile">
-        <div class="profile-top">
-          <img src="assets/Mercy.webp" alt="Mercy from Kenya">
-          <div><div class="country"><span data-lang="sk">🇰🇪 Keňa</span><span data-lang="en">🇰🇪 Kenya</span></div><h3>Mercy</h3>
-          <p data-lang="sk">Pochádza z Kene, krajiny známej prírodou, safari, rozmanitou kultúrou a pobrežím Indického oceánu. Mercy je mamou dvoch detí.&nbsp; &nbsp;&nbsp;</p>
-          <p data-lang="en">She is from Kenya, a country known for its stunning landscapes, safaris, diverse culture, and Indian Ocean coastline. Mercy is a mother of two children.</p>
-          <div class="tags"><span class="tag">English</span><span class="tag">Swahili</span><span class="tag">Kenya</span></div></div>
-        </div>
-
-    <div class="details">
-          <div class="detail-row"><strong>WhatsApp</strong><span class="detail-value">+254 799 039 358</span></div>
-          <div class="detail-row"><strong>Email</strong><span class="detail-value">mercy.africatalk@gmail.com</span></div>
-          <div class="detail-row"><strong><span data-lang="sk">Platba</span><span data-lang="en">Payment</span></strong><span class="detail-value">SK03 8330 0000 0023 0360 3860   /  <span data-lang="sk">správa „Mercy“</span><span data-lang="en">reference “Mercy”</span></span></div>
-        </div></div>
-        </article>
-
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-
+<section id="how" style="background: #f5eee4;">
+<div class="container">
 <div class="section-head">
-      <h2 data-lang="sk">Povedali o nás...</h2><h2 data-lang="en">What they said about us...</h2>
-      </div>
-
-
-      <p class="lead" data-lang="sk">V angličtine patrím do skupiny večných začiatočníkov. Anglické učebnice, slovíčka, gramatika,... - učila som sa,
-        ale dorozumieť som sa nevedela.  Pochopila som, že ak sa chcem dorozumieť anglicky, musím konečne začať hovoriť v tom jazyku a to najlepšie
-        s niekým, kto nebude vôbec vedieť po slovensky, aby som bola nútená komunikovať len v angličtine. A tak ma Marcel zoznámil s Jennifer. Prvá hodina
-        bola pre mňa hotová katastrofa. Nedokázala som zo seba dostať ani základy. Viac sme si písali, ako rozprávali. Našťastie to Jenny so mnou nevzdala.
-        Obdivujem jej trpezlivý prístup.  Lekcie s ňou sú zábavné. Každú hodinu sa naučím niečo nové a už teraz sa teším na ďalšiu lekciu.</p>
-
-      <p class="lead" data-lang="en">When it comes to English, I belong to the group of "perpetual beginners." I had studied English textbooks, vocabulary,
-        and grammar, yet I still could not actually communicate. I realized that if I wanted to be able to communicate in English, I finally had to start
-        speaking the language — ideally with someone who did not know a word of Slovak, forcing me to communicate exclusively in English. So, Marcel
-        introduced me to Jennifer. My first lesson was an absolute disaster. I could not even manage the basics. We ended up typing to each other more than
-         we actually spoke. Fortunately, Jenny did not give up on me. I truly admire her patient approach. Her lessons are fun. I learn something new every
-          single time, and I am already looking forward to the next one.</p>
-      
-      <p data-lang="sk">Anka zo Senca</p>
-      <p data-lang="en">Anka from Senec</p>
-    </div>
-    <div class="hero-photo">
-      <img src="assets/doprava.jpg" alt="AfrikaTalk conversation tutor">
-      <p class="gl-1" data-lang="sk">Verejná doprava v Tanzánii</p>
-      <p class="gl-1" data-lang="en">Public transportation in Tanzania</p></div>
-  </div>
+<h2 data-lang="sk">Ako to funguje?</h2>
+<h2 data-lang="en">How it works</h2>
+<p data-lang="sk">Jednoducho, online a v čase, ktor&yacute; v&aacute;m vyhovuje.</p>
+<p data-lang="en">Simple, online, and at a time that suits you.</p>
+</div>
+<div class="features">
+<div class="feature">
+<div class="icon">🗣️</div>
+<h3 data-lang="sk">Vyberte si jazyk</h3>
+<h3 data-lang="en">Choose a language</h3>
+<p data-lang="sk">Angličtina, amharčina, lugandčina alebo svahilčina.</p>
+<p data-lang="en">English, Amharic, Luganda or Swahili.</p>
+</div>
+<div class="feature">
+<div class="icon">💻</div>
+<h3 data-lang="sk">Stretnite sa online</h3>
+<h3 data-lang="en">Meet online</h3>
+<p data-lang="sk">30-min&uacute;tov&aacute; konverz&aacute;cia v čase, ktor&yacute; v&aacute;m vyhovuje.</p>
+<p data-lang="en">A 30-minute conversation at a time that suits you.</p>
+</div>
+<div class="feature">
+<div class="icon">🤝</div>
+<h3 data-lang="sk">Spoznajte človeka</h3>
+<h3 data-lang="en">Meet a person</h3>
+<p data-lang="sk">Rozpr&aacute;vajte sa o jazyku, kult&uacute;re, každodennom živote alebo o čomkoľvek, čo v&aacute;s zauj&iacute;ma.</p>
+<p data-lang="en">Talk about language, culture, everyday life, or anything else that interests you.</p>
+</div>
+</div>
+<div class="price" style="margin-top: 28px;">
+<div>
+<h2 data-lang="sk">Jedna 30-min&uacute;tov&aacute; konverz&aacute;cia</h2>
+<h2 data-lang="en">One 30-minute conversation</h2>
+<p data-lang="sk">Cena je 3 &euro;. Dobrovoľne m&ocirc;žete poslať aj vy&scaron;&scaron;iu sumu. Cel&uacute; sumu dostane v&aacute;&scaron; lektor.</p>
+<p data-lang="en">The price is &euro;3. You can choose to contribute more if you wish. Your tutor receives the full amount.</p>
+</div>
+<div class="price-number">&euro;3<small> / 30 min</small></div>
+</div>
+</div>
 </section>
-
-
-
-        
-    <div class="notice">
-      <strong data-lang="sk">Dôležité:</strong><strong data-lang="en">Important:</strong>
-      <span data-lang="sk"> AfrikaTalk je platforma na precvičovanie jazyka a kultúrnu výmenu – neslúži na randenie ani na žiadanie o finančné príspevky.</span>
-      <span data-lang="en"> AfrikaTalk is a platform for language practice and cultural exchange. It is not intended for dating or for requesting financial contributions.</span>
-    </div>
-  </div>
+<section id="profiles">
+<div class="container">
+<div class="section-head">
+<h2 data-lang="sk">Spoznajte svojho lektora</h2>
+<h2 data-lang="en">Meet your tutor</h2>
+<p data-lang="sk">Vyberte si človeka, s ktor&yacute;m sa chcete rozpr&aacute;vať.</p>
+<p data-lang="en">Choose the person you would like to talk to.</p>
+</div>
+<div class="profiles">
+<article class="profile">
+<div class="profile-top"><img src="assets/jenny.jpg" alt="Jenifer from Ethiopia">
+<div>
+<div class="country"><span data-lang="sk">🇪🇹 Eti&oacute;pia</span><span data-lang="en">🇪🇹 Ethiopia</span></div>
+<h3>Jenifer</h3>
+<p data-lang="sk">Jenifer z Eti&oacute;pie - krajiny vo v&yacute;chodnej Afrike, ktor&aacute; je zn&aacute;ma bohatou hist&oacute;riou, rozmanitou kult&uacute;rou, hornatou krajinou a t&yacute;m, že patr&iacute; medzi kol&iacute;sky ľudskej civiliz&aacute;cie. Jenifer &scaron;tuduje na Damat college v Addis Abebe. Jej materinsk&yacute; jazyk je amharčina a okrem angličtiny &scaron;tuduje franc&uacute;ž&scaron;tinu a č&iacute;n&scaron;tinu. Jej kon&iacute;čkom je eti&oacute;pska gastron&oacute;mia. Je mamou &scaron;tvorročnej dc&eacute;ry Michaely. M&ocirc;žete sa s ňou rozpr&aacute;vať o eti&oacute;pskej kult&uacute;re, hist&oacute;rii, gastron&oacute;mii, živote bežn&yacute;ch ľud&iacute; a o v&scaron;etkom, čo v&aacute;s zauj&iacute;ma.</p>
+<p data-lang="en">Jenifer comes from Ethiopia - a country in East Africa known for its rich history, diverse culture, and mountainous landscape, and recognized as one of the cradles of human civilization. Jenifer is a student at Damat College in Addis Ababa. Her native language is Amharic, and in addition to English, she is studying French and Chinese. She has a keen interest in Ethiopian cuisine. She is also the mother of a four-year-old daughter named Michaela. You can talk to her about Ethiopian culture, history, and cuisine, the lives of ordinary people, or anything else that interests you.</p>
+<div class="tags"><span class="tag">English</span><span class="tag">Amharic / አማርኛ</span><span class="tag">Culture</span></div>
+</div>
+</div>
+<div class="details">
+<div class="detail-row"><strong>WhatsApp</strong><span class="detail-value">+251 965 548 127</span></div>
+<div class="detail-row"><strong>Email</strong><span class="detail-value">jenny.afrikatalk@gmail.com</span></div>
+<div class="detail-row"><strong><span data-lang="sk">Platba</span><span data-lang="en">Payment</span></strong><span class="detail-value">SK03 8330 0000 0023 0360 3860 / <span data-lang="sk">spr&aacute;va &bdquo;Jenny&ldquo;</span><span data-lang="en">reference &ldquo;Jenny&rdquo;</span></span></div>
+</div>
+</article>
+<article class="profile">
+<div class="profile-top"><img src="assets/Gloria.png" alt="Gloria from Uganda">
+<div>
+<div class="country"><span data-lang="sk">🇺🇬 Uganda</span><span data-lang="en">🇺🇬 Uganda</span></div>
+<h3>Gloria</h3>
+<p data-lang="sk">Gloria poch&aacute;dza z Ugandy &ndash; krajiny vo v&yacute;chodnej Afrike, ktor&aacute; je zn&aacute;ma ako &bdquo;perla Afriky&ldquo;. Uganda m&aacute; jedny z najpriaznivej&scaron;&iacute;ch klimatick&yacute;ch podmienok na celom africkom kontinente. Krajina sa vyznačuje bohatou hist&oacute;riou. Je tiež v&yacute;znamn&yacute;m turistick&yacute;m cieľom, ktor&yacute; pon&uacute;ka množstvo kr&aacute;snych pr&iacute;rodn&yacute;ch scen&eacute;ri&iacute;. Gloria je učiteľkou, vyučuje angličtinu, dejepis a geografiu. Jej materinsk&yacute;m jazykom je lugandčina a okrem nej plynule ovl&aacute;da aj angličtinu. Rada sa vzdel&aacute;va a m&aacute; veľmi rada deti. Je matkou trojročnej dc&eacute;ry Shalluwy. M&ocirc;žete sa s ňou porozpr&aacute;vať o hist&oacute;rii Ugandy, živote bežn&yacute;ch ľud&iacute; alebo o čomkoľvek inom, čo v&aacute;s zauj&iacute;ma.</p>
+<p data-lang="en">She is from Uganda, a country known as the "Pearl of Africa." Uganda boasts some of the most favorable climatic conditions on the entire African continent. The country is characterized by a rich history and is also a significant tourist destination, offering a wealth of beautiful natural scenery. Gloria is a teacher; she teaches English, history, and geography. Her native language is Luganda, and she is also fluent in English. She enjoys learning and is very fond of children. She is the mother of a three-year-old daughter named Shalluwa. You can talk to her about the history of Uganda, the lives of ordinary people, or anything else that interests you.</p>
+<div class="tags"><span class="tag">English</span><span class="tag">Luganda</span><span class="tag">History</span></div>
+</div>
+</div>
+<div class="details">
+<div class="detail-row"><strong>WhatsApp</strong><span class="detail-value">+256 772 310 682</span></div>
+<div class="detail-row"><strong>Email</strong><span class="detail-value">gloria.afrikatalk@gmail.com</span></div>
+<div class="detail-row"><strong><span data-lang="sk">Platba</span><span data-lang="en">Payment</span></strong><span class="detail-value">SK03 8330 0000 0023 0360 3860 / <span data-lang="sk">spr&aacute;va &bdquo;Gloria&ldquo;</span><span data-lang="en">reference &ldquo;Gloria&rdquo;</span></span></div>
+</div>
+</article>
+<article class="profile">
+<div class="profile-top"><img src="assets/Neema.jpg" alt="Neema from Tanzania">
+<div>
+<div class="country"><span data-lang="sk">🇹🇿 Tanzania</span><span data-lang="en">🇹🇿 Tanzania</span></div>
+<h3>Neema</h3>
+<p data-lang="sk">Neema poch&aacute;dza z Tanz&aacute;nie - krajiny zn&aacute;mej svojou divokou pr&iacute;rodou, safari, rozmanit&yacute;mi kult&uacute;rami a pobrež&iacute;m. Je matkou jedn&eacute;ho dieťaťa.</p>
+<p data-lang="en">Neema is from Tanzania - a country known for its wildlife, safaris, diverse cultures, and coastline. She is a mother of one child.</p>
+<div class="tags"><span class="tag">English</span><span class="tag">Swahili</span><span class="tag">Tanzania</span></div>
+</div>
+</div>
+<div class="details">
+<div class="detail-row"><strong>WhatsApp</strong><span class="detail-value">+255 758 666 531</span></div>
+<div class="detail-row"><strong>Email</strong><span class="detail-value">neema.afrikatalk@gmail.com</span></div>
+<div class="detail-row"><strong><span data-lang="sk">Platba</span><span data-lang="en">Payment</span></strong><span class="detail-value">SK03 8330 0000 0023 0360 3860 / <span data-lang="sk">spr&aacute;va &bdquo;Neema&ldquo;</span><span data-lang="en">reference &ldquo;Neema&rdquo;</span></span></div>
+</div>
+</article>
+<article class="profile">
+<div class="profile-top"><img src="assets/Mercy.webp" alt="Mercy from Kenya">
+<div>
+<div class="country"><span data-lang="sk">🇰🇪 Keňa</span><span data-lang="en">🇰🇪 Kenya</span></div>
+<h3>Mercy</h3>
+<p data-lang="sk">Poch&aacute;dza z Kene, krajiny zn&aacute;mej pr&iacute;rodou, safari, rozmanitou kult&uacute;rou a pobrež&iacute;m Indick&eacute;ho oce&aacute;nu. Mercy je mamou dvoch det&iacute;.&nbsp; &nbsp;&nbsp;</p>
+<p data-lang="en">She is from Kenya, a country known for its stunning landscapes, safaris, diverse culture, and Indian Ocean coastline. Mercy is a mother of two children.</p>
+<div class="tags"><span class="tag">English</span><span class="tag">Swahili</span><span class="tag">Kenya</span></div>
+</div>
+</div>
+<div class="details">
+<div class="detail-row"><strong>WhatsApp</strong><span class="detail-value">+254 799 039 358</span></div>
+<div class="detail-row"><strong>Email</strong><span class="detail-value">mercy.africatalk@gmail.com</span></div>
+<div class="detail-row"><strong><span data-lang="sk">Platba</span><span data-lang="en">Payment</span></strong><span class="detail-value">SK03 8330 0000 0023 0360 3860 / <span data-lang="sk">spr&aacute;va &bdquo;Mercy&ldquo;</span><span data-lang="en">reference &ldquo;Mercy&rdquo;</span></span></div>
+</div>
+</article>
+</div>
+<section class="hero">
+<div class="container hero-grid">
+<div>
+<div class="section-head">
+<h2 data-lang="sk">Povedali o n&aacute;s...</h2>
+<h2 data-lang="en">What they said about us...</h2>
+</div>
+<p class="lead" data-lang="sk">V angličtine patr&iacute;m do skupiny večn&yacute;ch začiatočn&iacute;kov. Anglick&eacute; učebnice, slov&iacute;čka, gramatika,... - učila som sa, ale dorozumieť som sa nevedela. Pochopila som, že ak sa chcem dorozumieť anglicky, mus&iacute;m konečne začať hovoriť v tom jazyku a to najlep&scaron;ie s niek&yacute;m, kto nebude v&ocirc;bec vedieť po slovensky, aby som bola n&uacute;ten&aacute; komunikovať len v angličtine. A tak ma Marcel zozn&aacute;mil s Jennifer. Prv&aacute; hodina bola pre mňa hotov&aacute; katastrofa. Nedok&aacute;zala som zo seba dostať ani z&aacute;klady. Viac sme si p&iacute;sali, ako rozpr&aacute;vali. Na&scaron;ťastie to Jenny so mnou nevzdala. Obdivujem jej trpezliv&yacute; pr&iacute;stup. Lekcie s ňou s&uacute; z&aacute;bavn&eacute;. Každ&uacute; hodinu sa nauč&iacute;m niečo nov&eacute; a už teraz sa te&scaron;&iacute;m na ďal&scaron;iu lekciu.</p>
+<p class="lead" data-lang="en">When it comes to English, I belong to the group of "perpetual beginners." I had studied English textbooks, vocabulary, and grammar, yet I still could not actually communicate. I realized that if I wanted to be able to communicate in English, I finally had to start speaking the language &mdash; ideally with someone who did not know a word of Slovak, forcing me to communicate exclusively in English. So, Marcel introduced me to Jennifer. My first lesson was an absolute disaster. I could not even manage the basics. We ended up typing to each other more than we actually spoke. Fortunately, Jenny did not give up on me. I truly admire her patient approach. Her lessons are fun. I learn something new every single time, and I am already looking forward to the next one.</p>
+<p class="lead" data-lang="sk">Anka zo Senca</p>
+<p class="lead" data-lang="en">Anka from Senec</p>
+</div>
+<div class="hero-photo"><img src="assets/doprava.jpg" alt="AfrikaTalk conversation tutor">
+<p class="lead" data-lang="sk">Verejn&aacute; doprava v Tanz&aacute;nii</p>
+<p class="lead" data-lang="en">Public transportation in Tanzania</p>
+</div>
+</div>
 </section>
-
-<section id="contact" style="background:#f5eee4">
-  <div class="container">
-    <div class="section-head">
-      <h2 data-lang="sk">Pripravení porozprávať sa?</h2><h2 data-lang="en">Ready to start a conversation?</h2>
-      <p data-lang="sk">Kontaktujte vybraného lektora cez WhatsApp alebo email a dohodnite si termín.</p>
-      <p data-lang="en">Contact your chosen tutor via WhatsApp or email to arrange a time.</p>
-    </div>
-    <div class="faq">
-      <details data-lang="sk">
-        <summary>Pre koho sú konverzácie určené?</summary>
-        <p>Od úplných začiatočníkov až po pokročilých a pre každého, kto sa chce porozprávať v cudzom jazyku.</p>
-      </details>
-      <details data-lang="en">
-        <summary>Who are the conversations for?</summary>
-        <p>From complete beginners to advanced speakers – and anyone who wants to chat in a foreign language.</p>
-      </details>
-      <details data-lang="sk">
-        <summary>Aké jazyky si môžem vybrať?</summary>
-        <p>Angličtinu, amharčinu, lugandčinu alebo svahilčinu.</p>
-      </details>
-      <details data-lang="en">
-        <summary>Which languages can I choose?</summary>
-        <p>English, Amharic, Luganda or Swahili.</p>
-      </details>
-      <details data-lang="sk">
-        <summary>Ako prebieha platba?</summary>
-        <p data-lang="sk">Bankovým prevodom na slovenský účet. Celú sumu dostane lektor.</p>
-      </details>
-      <details data-lang="en">
-        <summary>How do I pay?</summary>
-        <p>Pay by bank transfer to the Slovak account provided. Your tutor receives the full amount.</p>
-      </details>
-    </div>
-  </div>
+<div class="notice"><strong data-lang="sk">D&ocirc;ležit&eacute;:</strong><strong data-lang="en">Important:</strong> <span data-lang="sk"> AfrikaTalk je platforma na precvičovanie jazyka a kult&uacute;rnu v&yacute;menu &ndash; nesl&uacute;ži na randenie ani na žiadanie o finančn&eacute; pr&iacute;spevky.</span> <span data-lang="en"> AfrikaTalk is a platform for language practice and cultural exchange. It is not intended for dating or for requesting financial contributions.</span></div>
+</div>
 </section>
-</main>
-
-<footer>
-  <div class="container footer-grid">
-    <div class="footer-small">Contact: +421 918 886 326 · mmisik22@gmail.com</div>
-    <div><div class="footer-brand">AfrikaTalk</div><div class="footer-small">Talk. Learn. Connect.</div></div>
-    <div class="footer-small">© 2026 AfrikaTalk.eu · Language practice & cultural exchange</div>
-    </div>
+<section id="contact" style="background: #f5eee4;">
+<div class="container">
+<div class="section-head">
+<h2 data-lang="sk">Pripraven&iacute; porozpr&aacute;vať sa?</h2>
+<h2 data-lang="en">Ready to start a conversation?</h2>
+<p data-lang="sk">Kontaktujte vybran&eacute;ho lektora cez WhatsApp alebo email a dohodnite si term&iacute;n.</p>
+<p data-lang="en">Contact your chosen tutor via WhatsApp or email to arrange a time.</p>
+</div>
+<div class="faq">
+<details data-lang="sk">
+<summary>Pre koho s&uacute; konverz&aacute;cie určen&eacute;?</summary>
+<p>Od &uacute;pln&yacute;ch začiatočn&iacute;kov až po pokročil&yacute;ch a pre každ&eacute;ho, kto sa chce porozpr&aacute;vať v cudzom jazyku.</p>
+</details>
+<details data-lang="en">
+<summary>Who are the conversations for?</summary>
+<p>From complete beginners to advanced speakers &ndash; and anyone who wants to chat in a foreign language.</p>
+</details>
+<details data-lang="sk">
+<summary>Ak&eacute; jazyky si m&ocirc;žem vybrať?</summary>
+<p>Angličtinu, amharčinu, lugandčinu alebo svahilčinu.</p>
+</details>
+<details data-lang="en">
+<summary>Which languages can I choose?</summary>
+<p>English, Amharic, Luganda or Swahili.</p>
+</details>
+<details data-lang="sk">
+<summary>Ako prebieha platba?</summary>
+<p data-lang="sk">Bankov&yacute;m prevodom na slovensk&yacute; &uacute;čet. Cel&uacute; sumu dostane lektor.</p>
+</details>
+<details data-lang="en">
+<summary>How do I pay?</summary>
+<p>Pay by bank transfer to the Slovak account provided. Your tutor receives the full amount.</p>
+</details>
+</div>
+</div>
+</section>
+</main><footer>
+<div class="container footer-grid">
+<div class="footer-small">Contact: +421 918 886 326 &middot; mmisik22@gmail.com</div>
+<div>
+<div class="footer-brand">AfrikaTalk</div>
+<div class="footer-small">Talk. Learn. Connect.</div>
+</div>
+<div class="footer-small">&copy; 2026 AfrikaTalk.eu &middot; Language practice &amp; cultural exchange</div>
+</div>
 </footer>
-
 <script>
   const buttons = {sk: document.getElementById('sk'), en: document.getElementById('en')};
   function setLang(lang){
